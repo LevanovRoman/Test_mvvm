@@ -1,0 +1,49 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style Selector="Grid.Wrapper">
+        <Setter Property="Margin" Value="5"></Setter>
+    </Style> 
+    
+    <Style Selector="Label.Input">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="Width" Value="100"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="Margin" Value="5, 10"></Setter>
+    </Style>
+    
+    <Style Selector="TextBox.Input">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="Width" Value="375"></Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="Margin" Value="5, 10"></Setter>
+    </Style>
+    
+    <Style Selector="Button">
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="Width" Value="75"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        <Setter Property="Margin" Value="10"></Setter>
+    </Style>
+    
+    <Style Selector="Button.Clear">
+        <Setter Property="Background" Value="Red"></Setter>
+    </Style>
+    
+    <Style Selector="Button.Save">
+        <Setter Property="Background" Value="Green"></Setter>
+    </Style>
+    
+    <Style Selector="StackPanel.Buttons">
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+    </Style>
+    
+    <Style Selector="ListBoxItem">
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="FontSize" Value="19"></Setter>
+        <Setter Property="Margin" Value="15, 8"></Setter>
+    </Style>
+    
+</Styles>

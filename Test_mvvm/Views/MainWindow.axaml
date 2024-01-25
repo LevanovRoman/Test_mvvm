@@ -1,0 +1,84 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Test_mvvm.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        Width="1200" Height="800"
+        WindowStartupLocation="CenterScreen"
+        x:Class="Test_mvvm.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Test_mvvm">
+
+        <Window.Styles>
+                <StyleInclude Source="/Views/MainWindowStyles.axaml"/>
+        </Window.Styles>
+    
+        <Grid RowDefinitions="Auto, *, Auto" Classes="Wrapper" ShowGridLines="False" Margin="0">
+                <StackPanel Grid.Row="0" MinHeight="40" Background="#cfd2d5">
+            
+                        <Menu VerticalAlignment="Center">
+                                <MenuItem Header="_Main" Click="Save_OnClick" HotKey="Ctrl+S">
+                                        <MenuItem Header="Open"/>
+                                        <MenuItem Header="Recent"/>
+                                        <MenuItem Header="New"/>
+                                        <MenuItem Header="Save"/>
+                                        <Separator/>
+                                        <MenuItem Header="Close"/>
+                                </MenuItem>        
+                                <MenuItem Header="_Home" Click="Clear_OnClick" HotKey="Ctrl+D"></MenuItem>
+                                <MenuItem Header="_Search" Click="Clear_OnClick" HotKey="Ctrl+D"></MenuItem>
+                                <MenuItem Header="_Contacts" Click="Clear_OnClick" HotKey="Ctrl+D"></MenuItem>
+                                <MenuItem Header="_Documentation" Click="Clear_OnClick" HotKey="Ctrl+D"></MenuItem>
+                                <MenuItem Header="_Address" Click="Clear_OnClick" HotKey="Ctrl+D"></MenuItem>
+                        </Menu>
+            
+                </StackPanel>
+        
+                <Grid Grid.Row="1" ColumnDefinitions="Auto, 1, Auto" ShowGridLines="False">
+                        <Grid Grid.Column="0" RowDefinitions="*, Auto">
+                                <StackPanel Grid.Row="0" Background="#f1f5f9">
+                                        <ListBox x:Name="sidebar">
+                                                <ListBoxItem>Sent Item</ListBoxItem>
+                                               <ListBoxItem>Inbox</ListBoxItem>
+                                               <ListBoxItem>Trash</ListBoxItem>
+                                               <ListBoxItem>Drafts</ListBoxItem>
+                                        </ListBox> 
+                                </StackPanel>
+                                
+                                <StackPanel Grid.Row="1" Margin="0,40">
+                                        <Calendar x:Name="calendar" SelectionMode="MultipleRange"
+                                                  HorizontalAlignment="Center" Margin="30,0"/>
+                                        <!-- <TextBlock Text="{Binding #calendar.SelectedDate}"/> -->
+                                </StackPanel>
+                        </Grid>
+                        
+                        <GridSplitter Grid.Column="1" Background="Black" ResizeDirection="Columns"/>
+                        
+                        <StackPanel Grid.Column="2">
+                                <!-- -->
+                                <StackPanel Orientation="Horizontal">
+                                        <Label Content="First name" Classes="Input"/>
+                                        <TextBox x:Name="InputFirstName" Classes="Input"/>
+                                </StackPanel>
+                
+                                <StackPanel Orientation="Horizontal">
+                                        <Label Content="Last name" Classes="Input" />
+                                        <TextBox x:Name="InputLastName" Classes="Input"/>
+                                </StackPanel>
+                
+                                <StackPanel Orientation="Horizontal" Classes="Buttons">
+                                        <Button x:Name="ButtonClear" Content="_Clear" Classes="Clear" Click="Clear_OnClick"/>
+                                        <Button x:Name="ButtonSave" Content="_Save" Classes="Save" Click="Save_OnClick"/>
+                                </StackPanel>
+                        </StackPanel>
+                </Grid>
+        
+                <StackPanel Grid.Row="2">
+                        <TextBlock x:Name="StatusBar"/>
+                </StackPanel>
+        
+        </Grid>
+
+</Window>
